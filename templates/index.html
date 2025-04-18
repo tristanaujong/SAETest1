@@ -6,18 +6,17 @@
 </head>
     
 <body>
-    <h1>Search for a Pokémon</h1>
+    <h1>Get a random breaking bad quote</h1>
 
-    <form action="/pokemon/" method="get"> 
-        <input type="text" name="name" placeholder="type something..." required>
-        <button type = "submit">Search</button>
+    <form action="/v1/quotes" method="get"> 
+        <!-- <input type="text" name="name" placeholder="type something..." required> -->
+        <button type = "submit">Press for random quote</button>
     </form>
 
-    {% if pokemon %}
+    {% if quote %}
         <h2>Result:</h2>
-        <p><strong>Name:</strong> {{ pokemon.name }}</p>
-        <p><strong>ID:</strong> {{ pokemon.id }}</p>
-        <p><strong>Height:</strong> {{ pokemon.height }}</p>
+        <p>Quote: {{ quote.quote }}</p>
+        <p>Quote: {{ quote.author }}</p>
     {% elif error %}
         <p style="color:red;">{{ error }}</p>
     {% endif %}
