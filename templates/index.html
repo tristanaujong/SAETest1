@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang=""en>
+<head>
+    <meta charset="UTF-8">
+    <title>Pokémon Search</title>
+</head>
+    
+<body>
+    <h1>Search for a Pokémon</h1>
+
+    <form action="/pokemon/" method="get"> 
+        <input type="text" name="name" placeholder="type something..." required>
+        <button type = "submit">Search</button>
+    </form>
+
+    {% if pokemon %}
+        <h2>Result:</h2>
+        <p><strong>Name:</strong> {{ pokemon.name }}</p>
+        <p><strong>ID:</strong> {{ pokemon.id }}</p>
+        <p><strong>Height:</strong> {{ pokemon.height }}</p>
+    {% elif error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
